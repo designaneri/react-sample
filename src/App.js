@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {Container,Typography} from '@mui/material';
 import './App.css';
+import './data.json';
 import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 
@@ -14,7 +15,7 @@ const App = () => {
   const [filterRole, setFilterRole] = useState('All');
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5501/src/data.json')
+    fetch('./data.json')
       .then((response) => response.json())
       .then((user) => setMyUser(user));
   }, []);
